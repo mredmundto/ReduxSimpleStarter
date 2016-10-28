@@ -12,6 +12,10 @@ describe('App - could be any name', () => {
     expect(component.find('.comment-box')).to.exist; 
   });
 
+  it('shows a comment list', ()=> {
+    expect(component.find('.comment-list')).to.exist; 
+  }); 
+
   // // create an instance of App
   // const component = renderComponent(App)
   // // Use 'it' to test a single attribute of a target

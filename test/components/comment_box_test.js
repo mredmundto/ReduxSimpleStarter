@@ -9,9 +9,7 @@ describe('CommentBox Test', ()=> {
   });
 
   it('has a correct class', ()=> {
-   
     expect(component).to.have.class('comment-box')
-
   })
 
   it('has a text area ', ()=> {
@@ -23,4 +21,28 @@ describe('CommentBox Test', ()=> {
     //const component = renderComponent(CommentBox); 
     expect(component.find('button')).to.exist; 
   });
-}); 
+
+  describe('entering some text', ()=> {
+
+    beforeEach(()=> {
+      component.find('textarea').simulate('change', 'new comment');
+    });
+
+    it('shows that text is in textarea', ()=> {
+      expect(component.find('textarea')).to.have.value('new comment')
+    });
+
+    it('when submited, clears the input', ()=> {
+      component.simulate('submit'); 
+      expect(component.find('textarea')).to.have.value(''); 
+    });
+
+  });
+
+});
+
+
+
+
+
+
